@@ -1,0 +1,139 @@
+package com.example.gsontest;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import com.example.gsontest.gsonAir.Air;
+import com.example.gsontest.gsonWeather.Forecast;
+import com.example.gsontest.gsonWeather.Lifestyle;
+import com.example.gsontest.gsonWeather.Weather;
+import com.google.gson.Gson;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Button button = (Button)findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EditText city = (EditText)findViewById(R.id.city_txt);
+                String City = city.getText().toString();
+                sendRequestWithOkHttp(City);
+
+            }
+        });
+    }
+
+    private void sendRequestWithOkHttp(final String City) {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try{
+                    //-----天气信息
+                    OkHttpClient client = new OkHttpClient();
+                    String urlWeather = "https://free-api.heweather.com/s6/weather?location="+City+"&key=5cfa71f0523045cbbc2a915848c89ad4";
+                    //Request request = new Request.Builder().url("https://free-api.heweather.com/s6/weather?location=yangjiang&key=5cfa71f0523045cbbc2a915848c89ad4").build();
+                    Request request = new Request.Builder().url(urlWeather).build();
+                    Response response = client.newCall(request).execute();
+                    String responseData = response.body().string();
+                    Log.d("MainActivity","is "+responseData);
+                    JSONObject jsonObject = new JSONObject(responseData);
+                    JSONArray jsonArray = jsonObject.getJSONArray("HeWeather6");
+                    String weatherContent = jsonArray.getJSONObject(0).toString();
+                    Weather weather = new Gson().fromJson(weatherContent , Weather.class);
+                    String value = weather.status;
+                    Forecast forecast = weather.forecastList.get(0);
+                    Lifestyle lifestyle1 = weather.lifestyles.get(0);
+                    Lifestyle lifestyle2 = weather.lifestyles.get(1);
+                    Lifestyle lifestyle3 = weather.lifestyles.get(2);
+
+                    //---空气质量信息
+                    String urlAir = "https://free-api.heweather.com/s6/air?location="+City+"&key=5cfa71f0523045cbbc2a915848c89ad4";
+                    //request = new Request.Builder().url("https://free-api.heweather.com/s6/air?location=yangjiang&key=5cfa71f0523045cbbc2a915848c89ad4").build();
+                    request = new Request.Builder().url(urlAir).build();
+                    response = client.newCall(request).execute();
+                    responseData = response.body().string();
+                    jsonObject = new JSONObject(responseData);
+                    jsonArray = jsonObject.getJSONArray("HeWeather6");
+                    String AirContent = jsonArray.getJSONObject(0).toString();
+                    Air air = new Gson().fromJson(AirContent, Air.class);
+
+                    //Log.d("MainActivity","pm25 "+ air.airNowCity.pm25);
+                    //Log.d("MainActivity","aqi "+ air.airNowCity.aqi);
+
+                    //Log.d("MainActivity","状态 "+ value);
+                    //Log.d("MainActivity","名字 "+ weather.basic.parent_city);
+                   // Log.d("MainActivity","代号 "+ weather.basic.code);
+                    ///Log.d("MainActivity","国家 "+ weather.basic.cnty);
+                   /// Log.d("MainActivity","温度 "+ weather.now.tmp);
+                   // Log.d("MainActivity","湿度 "+ weather.now.hum);
+                   // Log.d("MainActivity","天气状况 "+ weather.now.cond_txt);
+                   // Log.d("MainActivity","预测时间 "+ forecast.date);
+                    //Log.d("MainActivity","洗车指数"+ weather.lifestyle.type.cw);
+                   // Log.d("MainActivity","指数状况"+ lifestyle1.type);
+                   // Log.d("MainActivity","指数详细信息 "+ lifestyle1.txt);
+                    //Log.d("MainActivity","指数详细信息 "+ lifestyle2.txt);
+
+                    WeatherShow(weather.now.tmp,weather.now.hum,weather.now.cond_txt,lifestyle1.txt,lifestyle2.txt,lifestyle3.txt);
+                    AirShow(air.airNowCity.aqi,air.airNowCity.pm25,air.airNowCity.qlty);
+
+
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+    }
+
+    private void AirShow(final String Aqi, final String Pm25, final String Qlty) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                TextView aqi = (TextView)findViewById(R.id.aqi_text);
+                TextView pm25 = (TextView)findViewById(R.id.pm25_text);
+                TextView qlt= (TextView)findViewById(R.id.qlt_text);
+                aqi.setText(Aqi);
+                pm25.setText(Pm25);
+                qlt.setText(Qlty);
+            }
+        });
+    }
+
+    private void WeatherShow(final String Tmp, final String Hum, final String Cond_txt, final String Txt1, final String Txt2, final String Txt3) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+
+
+                TextView tmp = (TextView)findViewById(R.id.tmp_text);
+                TextView hum = (TextView)findViewById(R.id.hum_text);
+                TextView cond_txt= (TextView)findViewById(R.id.cond_text);
+                TextView suggestion1= (TextView)findViewById(R.id.suggestion1);
+                TextView suggestion2= (TextView)findViewById(R.id.suggestion2);
+                TextView suggestion3= (TextView)findViewById(R.id.suggestion3);
+
+                tmp.setText(Tmp+"℃");
+                hum.setText(Hum);
+                cond_txt.setText(Cond_txt);
+                suggestion1.setText("(1)"+Txt1);
+                suggestion2.setText("(2)"+Txt2);
+                suggestion3.setText("(3)"+Txt3);
+            }
+        });
+    }
+}

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:padding="10dp"
+        android:background="@drawable/ba"
+        android:orientation="vertical"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp">
+
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:gravity="left"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:textSize="17sp"
+            android:text="姓名： "
+            android:id="@+id/tv_name"/>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:gravity="left"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:textSize="17sp"
+            android:text="性别： "
+            android:id="@+id/tv_sex"/>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:gravity="left"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:textSize="17sp"
+            android:text="学校： "
+            android:id="@+id/tv_school"/>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:gravity="left"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:textSize="17sp"
+            android:text="身份证号： "
+            android:id="@+id/tv_cre_id"/>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:gravity="left"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:textSize="17sp"
+            android:text="学号： "
+            android:id="@+id/tv_id"/>
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:gravity="left"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:textSize="17sp"
+            android:text="手机号码： "
+            android:id="@+id/tv_phone"/>
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:gravity="left"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:textSize="17sp"
+            android:text="邮箱： "
+            android:id="@+id/tv_email"/>
+
+    </LinearLayout>
+    </LinearLayout>

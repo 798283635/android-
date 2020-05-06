@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <RelativeLayout android:layout_height="match_parent" android:layout_width="match_parent">
+        <!-- 内容部分， fragment切换 -->
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:background="#B4DBEC"
+
+            android:id="@+id/content_layout">
+        </LinearLayout>
+
+        <View
+            android:layout_height="1dp"
+            android:layout_width="match_parent"
+            android:background="@color/colorAccent"
+
+            android:id="@+id/view_line"
+            tools:layout_editor_absoluteY="39dp"
+            tools:layout_editor_absoluteX="419dp"/>
+
+        <!-- 底部tab -->
+        <LinearLayout
+            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:id="@+id/bottom_tab"
+            android:layout_alignParentBottom="true">
+
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:id="@+id/tv_tab1"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:text="头条"
+                android:gravity="center"
+                android:layout_weight="1"/>
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:id="@+id/tv_tab2"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:text="学习"
+                android:gravity="center"
+                android:layout_weight="1"/>
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:id="@+id/tv_tab3"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:text="资讯"
+                android:gravity="center"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:id="@+id/tv_tab4"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:text="我的"
+                android:gravity="center"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

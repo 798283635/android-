@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:textSize="22sp"
+            android:text="Sign In"
+            android:id="@+id/textView"/>
+        <EditText
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:text=""
+            android:id="@+id/et_signing_id"
+            android:inputType="textPersonName"
+
+            android:hint="ID"
+            />
+
+        <EditText
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:id="@+id/et_signing_password"
+            android:inputType="textPassword"
+
+            android:hint="Password"
+            />
+
+        <Button
+            android:background="@android:color/holo_blue_bright"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="30sp"
+            android:textStyle="bold"
+            android:text="Sign in"
+            android:id="@+id/btn_signing_submit"
+             />
+
+
+</LinearLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_height="match_parent" android:layout_width="match_parent" android:orientation="vertical" xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button android:id="@+id/create_database" android:layout_height="wrap_content" android:layout_width="match_parent" android:text="Create database"/>
+    <Button android:id="@+id/add_data" android:layout_height="wrap_content" android:layout_width="match_parent" android:text="Add data"/>
+    <Button android:id="@+id/update_data" android:layout_height="wrap_content" android:layout_width="match_parent" android:text="Update data"/>
+    <Button android:id="@+id/delete_data" android:layout_height="wrap_content" android:layout_width="match_parent" android:text="Delete data"/>
+    <Button android:id="@+id/query_data" android:layout_height="wrap_content" android:layout_width="match_parent" android:text="Query data"/>
+</LinearLayout>

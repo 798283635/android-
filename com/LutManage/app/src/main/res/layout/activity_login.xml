@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bd">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+
+
+        android:paddingTop="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="30dp"
+            android:paddingTop="20dp"
+            android:gravity="center"
+            android:weightSum="1">
+            <ImageView
+                android:layout_width="118dp"
+                android:layout_height="109dp"
+                android:layout_gravity="center"
+                android:background="@drawable/lut" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="365dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp">
+            <View
+                android:layout_width="123dp"
+                android:layout_height="1dip"
+                android:layout_marginTop="10dp"
+                android:background="#83738F"
+                android:layout_weight="1.36">
+            </View>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Login with  "
+                android:layout_marginLeft="20dp"
+                android:textSize="20dp"
+                android:layout_weight="0.36"
+                android:textColor="#FFFFFF"/>
+            <View
+                android:layout_width="123dp"
+                android:layout_height="1dip"
+                android:layout_marginTop="10dp"
+                android:background="#83738F"
+                android:layout_weight="0.21">
+            </View>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:background="#0d404348">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/twitter"
+                />
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/facebook"
+                />
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/google"
+                />
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/wechat"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="369dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp">
+            <View
+                android:layout_width="109dp"
+                android:layout_height="1dip"
+                android:layout_marginTop="10dp"
+                android:background="#83738F"
+                android:layout_weight="0.20">
+            </View>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="        Or"
+                android:layout_marginLeft="20dp"
+                android:textSize="20dp"
+                android:layout_weight="0.36"
+                android:textColor="#FFFFFF"/>
+            <View
+                android:layout_width="116dp"
+                android:layout_height="1dip"
+                android:layout_marginTop="10dp"
+                android:background="#83738F">
+            </View>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/layoutstyle"
+
+            >
+
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/user"/>
+
+            <EditText
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:background="@null"
+                android:layout_weight="10"
+                android:textSize="25sp"
+                android:hint="user name"
+                android:textColor="#9F9FA0"
+                android:textColorHint="#9F9FA0"
+                android:id="@+id/user"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp">
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/layoutstyle">
+
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/lock" />
+
+            <EditText
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:background="@null"
+                android:layout_weight="10"
+                android:textSize="25sp"
+                android:hint="password"
+                android:textColor="#9F9FA0"
+                android:textColorHint="#9F9FA0"
+                android:id="@+id/lock"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="318dp"
+            android:layout_height="match_parent"
+            android:paddingBottom="30dp"
+            android:paddingTop="20dp"
+            android:orientation="vertical">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/buttonstyle"
+                android:text="             Login           "
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:id="@+id/login"/>
+            <TextView
+                android:layout_marginTop="15dp"
+                android:layout_width="298dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+
+                android:text="create an account"
+                android:textSize="25dp"
+                android:gravity="center"
+                android:textColor="#990000"
+                android:textStyle="bold"
+                android:id="@+id/sign_up"/>
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+</LinearLayout>
+
